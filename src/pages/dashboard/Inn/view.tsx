@@ -1,6 +1,5 @@
 import AddDocButton from "../../../components/button/addDocButton";
 import TableForDashboard from "../../../components/table/view";
-import { data } from "../../../data/view";
 
 const Inn = () => {
   return (
