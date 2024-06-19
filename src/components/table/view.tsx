@@ -1,9 +1,9 @@
 import React from "react";
-import { Col, Input, Row, Select, Space, Table, Tag } from "antd";
+import { Table } from "antd";
 import type { TableProps } from "antd";
 import "./index.scss";
 
-interface DataType {
+type DataType = {
   key: string;
   id: string | number;
   age: number;
@@ -17,7 +17,7 @@ interface DataType {
   inspector: string;
   status: string;
   action: string[];
-}
+};
 
 const columns: TableProps<DataType>["columns"] = [
   {
@@ -70,9 +70,11 @@ const columns: TableProps<DataType>["columns"] = [
 
 const data: DataType[] = [
   {
-    key: "1",
     id: "124",
     titleName: "Название",
+    age: 30,
+    action: [""],
+    key: "",
     address: "New York No. 1 Lake Park",
     tags: ["nice", "developer"],
     type: "Наименование",
