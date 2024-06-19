@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "antd";
+import { DatePicker, Input, Select, Table } from "antd";
 import type { TableProps } from "antd";
 import "./index.scss";
 
@@ -25,46 +25,119 @@ const columns: TableProps<DataType>["columns"] = [
     dataIndex: "id",
     key: "id",
     render: (text) => <a>{text}</a>,
+    children: [
+      {
+        title: <Input placeholder="ID" />,
+        key: "id",
+        dataIndex: "id",
+      },
+    ],
   },
   {
     title: "Название",
     dataIndex: "titleName",
     key: "titleName",
+    children: [
+      {
+        title: <Input placeholder="Название" />,
+        key: "id",
+        dataIndex: "id",
+      },
+    ],
   },
   {
     title: "Тип",
     dataIndex: "type",
     key: "type",
+    children: [
+      {
+        title: <Input placeholder="Тип" />,
+        key: "id",
+        dataIndex: "id",
+      },
+    ],
   },
   {
     title: "Дата начала",
     key: "dateStart",
     dataIndex: "dateStart",
+    children: [
+      {
+        title: <DatePicker placeholder="Выберите" />,
+        key: "dateStart",
+        dataIndex: "dateStart",
+      },
+    ],
   },
   {
     title: "Дата конца",
     key: "dateEnd",
     dataIndex: "dateEnd",
+    children: [
+      {
+        title: <DatePicker placeholder="Выберите" />,
+        key: "dateStart",
+        dataIndex: "dateStart",
+      },
+    ],
   },
   {
     title: "Исполнитель",
     key: "name",
     dataIndex: "name",
+    children: [
+      {
+        title: <Input placeholder="Тип" />,
+        key: "id",
+        dataIndex: "id",
+      },
+    ],
   },
   {
     title: "Проверяющий",
     key: "inspector",
     dataIndex: "inspector",
+    children: [
+      {
+        title: <Input placeholder="Тип" />,
+        key: "id",
+        dataIndex: "id",
+      },
+    ],
   },
   {
     title: "Статус",
     key: "status",
     dataIndex: "status",
+    children: [
+      {
+        title: (
+          <>
+            <Select placeholder="На обсуждении">
+              <Select.Option value="sample">Sample</Select.Option>
+            </Select>
+          </>
+        ),
+        key: "status",
+        dataIndex: "status",
+      },
+    ],
   },
   {
     title: "Действие",
     key: "action",
     dataIndex: "action",
+    children: [
+      {
+        title: (
+          <>
+            <Input />
+          </>
+        ),
+        key: "action",
+        dataIndex: "action",
+      },
+    ],
   },
 ];
 
