@@ -27,9 +27,9 @@ const handleChange = (value: string | string[]) => {
 const ModalCRUD = ({ onOk }: Props) => {
   const [size, setSize] = useState<SizeType>("middle");
   const { modals, closeModal } = modalsStore();
-  const handleSizeChange = (e: RadioChangeEvent) => {
-    setSize(e.target.value);
-  };
+  // const handleSizeChange = (e: RadioChangeEvent) => {
+  //   setSize(e.target.value);
+  // };
   return (
     <>
       <Modal

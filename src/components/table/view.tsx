@@ -135,7 +135,7 @@ const columns: TableProps<DataType>["columns"] = [
         dataIndex: "action",
       },
     ],
-    render: (_, record) => (
+    render: (_) => (
       <Space size="middle">
         <div>
           <ActionFirstIcon />
