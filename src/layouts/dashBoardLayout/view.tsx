@@ -1,6 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { ASSETS } from "../../assets/img";
-import SideBarNavbar from "../../components/sideBarNavbar/view";
 import "../index.scss";
 
 const DashboardLayout = () => {
@@ -24,7 +23,7 @@ const DashboardLayout = () => {
           <a className="text-white" href="">
             Техническая поддержка
           </a>
-          <a className="text-white" href="">
+          <a onClick={() => navigate("popular")} className="text-white">
             Популярные проекты
           </a>
           <a className="text-white" href="">
@@ -39,10 +38,7 @@ const DashboardLayout = () => {
         </div>
       </div>
       <div className="w-[98%] mx-[auto]">
-        <SideBarNavbar />
-        <div>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );
