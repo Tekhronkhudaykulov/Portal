@@ -1,0 +1,1 @@
+import{O as r}from"./index-D8V5-vdZ.js";import{L as s,M as a}from"./view-BVbBzaxH.js";const o=()=>r.jsxs("div",{children:[r.jsx(s,{title:"Популярные проекты"}),r.jsx("div",{className:"mt-[18px]",children:r.jsx(a,{})})]});export{o as default};

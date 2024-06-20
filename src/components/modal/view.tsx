@@ -3,7 +3,7 @@ import { Input } from "antd";
 import { modalsStore } from "../../store";
 import ImgUpload from "../upload/view";
 import { useState } from "react";
-import type { ConfigProviderProps, RadioChangeEvent, SelectProps } from "antd";
+import type { ConfigProviderProps, SelectProps } from "antd";
 
 interface Props {
   onOk?: () => void;
@@ -30,6 +30,9 @@ const ModalCRUD = ({ onOk }: Props) => {
   // const handleSizeChange = (e: RadioChangeEvent) => {
   //   setSize(e.target.value);
   // };
+
+  console.log(setSize);
+
   return (
     <>
       <Modal
