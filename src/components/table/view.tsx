@@ -1,22 +1,18 @@
 import React from "react";
-import { DatePicker, Input, Select, Table } from "antd";
+import { DatePicker, Input, Select, Space, Table } from "antd";
 import type { TableProps } from "antd";
 import "./index.scss";
+import { ActionFirstIcon, ActionSecondIcon } from "../../assets/icon";
 
 type DataType = {
-  key: string;
   id: string | number;
-  age: number;
   address: string;
-  tags: string[];
-  titleName: string;
   type: string;
   dateStart: string | number;
   dateEnd: string;
   name: string;
   inspector: string;
   status: string;
-  action: string[];
 };
 
 const columns: TableProps<DataType>["columns"] = [
@@ -87,7 +83,7 @@ const columns: TableProps<DataType>["columns"] = [
     dataIndex: "name",
     children: [
       {
-        title: <Input placeholder="Тип" />,
+        title: <Input placeholder="Выберите" />,
         key: "id",
         dataIndex: "id",
       },
@@ -99,7 +95,13 @@ const columns: TableProps<DataType>["columns"] = [
     dataIndex: "inspector",
     children: [
       {
-        title: <Input placeholder="Тип" />,
+        title: (
+          <>
+            <Select placeholder="Выберите">
+              <Select.Option value="sample">Sample</Select.Option>
+            </Select>
+          </>
+        ),
         key: "id",
         dataIndex: "id",
       },
@@ -129,27 +131,37 @@ const columns: TableProps<DataType>["columns"] = [
     dataIndex: "action",
     children: [
       {
-        title: (
-          <>
-            <Input />
-          </>
-        ),
         key: "action",
         dataIndex: "action",
       },
     ],
+    render: (_, record) => (
+      <Space size="middle">
+        <div>
+          <ActionFirstIcon />
+          <ActionSecondIcon />
+        </div>
+      </Space>
+    ),
   },
 ];
 
 const data: DataType[] = [
   {
     id: "124",
-    titleName: "Название",
-    age: 30,
-    action: [""],
-    key: "",
     address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
+    type: "Наименование",
+    dateStart: "11.05.2024",
+    dateEnd: "11.05.2024",
+    name: "Имя Фамилия",
+    inspector: "Имя Фамилия",
+    status: "На обсуждении",
+  },
+  {
+    id: "124",
+
+    address: "New York No. 1 Lake Park",
+
     type: "Наименование",
     dateStart: "11.05.2024",
     dateEnd: "11.05.2024",
