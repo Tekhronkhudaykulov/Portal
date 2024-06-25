@@ -1,10 +1,10 @@
 import { HeaderIcon1 } from "../../../../assets/icon";
 
-interface HeaderCardType {
-  icon?: any;
-  title?: string;
-  desc?: string;
-}
+// interface HeaderCardType {
+//   icon?: any;
+//   title?: string;
+//   desc?: string;
+// }
 const HeaderCard = () => {
   return (
     <div className="flex gap-x-[20px] py-[13px] w-full  px-[15px] bg-white rounded-[12px]">
