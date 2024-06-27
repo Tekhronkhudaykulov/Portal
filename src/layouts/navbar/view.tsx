@@ -4,7 +4,7 @@ import { ASSETS } from "../../assets/img";
 import LanguageSwitcher from "../../components/languageSwitcher/view";
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="container mx-auto pt-[30px] pb-[20px] flex items-center justify-between">
       <div>
