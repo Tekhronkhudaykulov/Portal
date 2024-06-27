@@ -1,4 +1,9 @@
 {
-  "russian": "Ru",
-  "uzbek": "Uz"
+  "sectionTitle": {
+    "categoryTitle": "Категории"
+  },
+  "done": "Обсуждение завершено",
+  "continue": "Обсуждение продолжается",
+  "allDocument": "Все документы",
+  "navbarTitle": "Davlat ta'lim standartlari va davlat ta'lim talablarining yagona ochiq muhokama portali"
 }

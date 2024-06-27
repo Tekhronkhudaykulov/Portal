@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { BurgerMenu, Profile } from "../../assets/icon";
 import { ASSETS } from "../../assets/img";
 import LanguageSwitcher from "../../components/languageSwitcher/view";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="container mx-auto pt-[30px] pb-[20px] flex items-center justify-between">
       <div>
@@ -13,8 +15,7 @@ const Navbar = () => {
       <div className="flex items-center gap-x-[20px]">
         <img src={ASSETS.SideBarLogo} alt="" />
         <p className="w-[650px] text-[20px] font-[700] text-[#ffffff] leading-[25px]">
-          Единый открытый дискуссионный портал Государственных образовательных
-          стандартов и государственных образовательных требований
+          {t("navbarTitle")}
         </p>
       </div>
       <div className="flex items-center gap-x-[20px]">

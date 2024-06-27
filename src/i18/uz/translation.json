@@ -1,4 +1,10 @@
 {
-  "russian": "Ru",
-  "uzbek": "Uz"
+  "sectionTitle": {
+    "categoryTitle": "Kategoriya"
+  },
+
+  "done": "Muhokama yakunlandi",
+  "continue": "Muhokama davom etmoqda",
+  "allDocument": "Barcha hujjatlar",
+  "navbarTitle": "Davlat ta'lim standartlari va davlat ta'lim talablarining yagona ochiq muhokama portali"
 }

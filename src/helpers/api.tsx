@@ -33,6 +33,6 @@ $api.interceptors.request.use((config: any) => {
 
 export const changeLanguage = (lng: string) => {
   i18n.changeLanguage(lng);
-  localStorage.setItem("proboxLanguage", lng);
+  localStorage.setItem("portalLanguage", lng);
   $api.defaults.headers.common["Accept-Language"] = lng;
 };
