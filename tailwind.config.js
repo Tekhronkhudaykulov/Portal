@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         white: "#fff",
+        titleHome: "#000000",
         pitchBlack: "#000000",
         graySecond: "#8C8C8C",
         yellowSecond: "#F0F220",
