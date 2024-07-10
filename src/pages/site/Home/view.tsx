@@ -1,4 +1,3 @@
-import { PieChart } from "@mui/x-charts";
 import {
   CategoryIcon1,
   CategoryIcon2,
@@ -8,11 +7,18 @@ import {
 import AddDocButton from "../../../components/button/addDocButton";
 
 import SearchInput from "../../../components/searchInput/view";
-import { Navbar } from "../../../layouts";
+import { Footer, Navbar } from "../../../layouts";
 import Header from "../Header/view";
 import CategoryCard from "./components/CategoryCard";
 import { ProjectCard } from "./components/NewsCard";
-import ChartCard from "./components/ChartCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { ASSETS } from "../../../assets/img";
+import SliderCard from "../../../components/sliderCard/view";
 
 const Home = () => {
   return (
@@ -87,7 +93,7 @@ const Home = () => {
             <ProjectCard />
           </div>
         </section>
-        <section>
+        {/* <section>
           <p className="titleHome text-[30px] font-[700] mb-[30px]">
             Статистика
           </p>
@@ -137,7 +143,58 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </section> */}
+        <section className="">
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <SliderCard
+                img={ASSETS.SliderImg}
+                title="O'zbekiston Respublikasi Konstitutsiyasi"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderCard
+                img={ASSETS.SliderImg2}
+                title="O'zbekiston Respublikasi qonun hujjatlari ma'lumotlari milliy bazasi"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderCard
+                img={ASSETS.SliderImg3}
+                title="O'zbekiston Respublikasi hukumat portali"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderCard
+                img={ASSETS.SliderImg4}
+                title="Taraqqiyot strategiyasi markazi"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderCard
+                img={ASSETS.SliderImg4}
+                title="Taraqqiyot strategiyasi markazi"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <SliderCard
+                img={ASSETS.SliderImg4}
+                title="Taraqqiyot strategiyasi markazi"
+              />
+            </SwiperSlide>
+          </Swiper>
         </section>
+      </div>
+      <div className="bg-[#397FD5] mt-[50px]">
+        <Footer />
       </div>
     </div>
   );

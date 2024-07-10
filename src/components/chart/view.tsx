@@ -2,6 +2,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 
 const Chart = () => {
   <PieChart
+    className="!h-[430px]"
     series={[
       {
         data: [
