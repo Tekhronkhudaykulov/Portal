@@ -7,7 +7,6 @@ import {
 } from "../../../assets/icon";
 import AddDocButton from "../../../components/button/addDocButton";
 
-import SearchInput from "../../../components/searchInput/view";
 import { Footer, Navbar } from "../../../layouts";
 import Header from "../Header/view";
 import CategoryCard from "./components/CategoryCard";
@@ -56,17 +55,14 @@ const Home = () => {
       </div>
       <div className="container mx-auto max-xl:pl-[10px] max-xl:pr-[10px]">
         <Header />
-        <div className="flex items-center justify-center my-[40px]">
+        {/* <div className="flex items-center justify-center my-[40px]">
           <SearchInput />
-        </div>
-        <section>
+        </div> */}
+        <section className="mt-[40px]">
           <div className="flex justify-between items-center">
             <p className="titleHome text-[30px] font-[700] max-xl:text-[25px]">
               Категории
             </p>
-            <div className="max-xl:hidden">
-              <AddDocButton title="Посмотреть все" />
-            </div>
           </div>
           <div className="grid grid-cols-4 gap-[20px] my-[30px] max-xl:grid max-xl:grid-cols-2 max-xl:gap-[10px]">
             <CategoryCard
@@ -102,7 +98,7 @@ const Home = () => {
               icon={<CategoryIcon4 />}
             />
           </div>
-          <div className="max-xl:flex max-xl:justify-center hidden">
+          <div className="max-xl:flex max-xl:justify-center flex justify-center">
             <AddDocButton title="Посмотреть все" />
           </div>
         </section>
