@@ -3,7 +3,7 @@ import HeaderCard from "./component/view";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between mt-[40px] gap-x-[20px]">
+    <div className="flex items-center justify-between mt-[40px] gap-x-[20px] max-xl:flex max-xl:flex-col max-xl:gap-y-[10px]">
       <HeaderCard
         desc="Обсуждение завершено"
         title="24 870"

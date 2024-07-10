@@ -1,15 +1,21 @@
 import { BurgerMenu, Profile } from "../../assets/icon";
 import { ASSETS } from "../../assets/img";
+import { modalsStore } from "../../store";
 
 const Navbar = () => {
+  const { openModal } = modalsStore();
+
   return (
-    <div className="container mx-auto pt-[30px] pb-[20px] flex items-center justify-between">
+    <div className="container mx-auto pt-[30px] pb-[20px] flex items-center justify-between  max-xl:pl-[10px] max-xl:pr-[10px]">
       <div>
-        <div className="w-[50px] h-[50px] bg-[#F0F220] flex items-center justify-center rounded-[12px]">
+        <div
+          onClick={() => openModal("CRUID")}
+          className="w-[50px]  cursor-pointer h-[50px] bg-[#F0F220] flex items-center justify-center rounded-[12px]"
+        >
           <BurgerMenu />
         </div>
       </div>
-      <div className="flex items-center gap-x-[20px]">
+      <div className="flex items-center gap-x-[20px] max-xl:hidden">
         <img src={ASSETS.SideBarLogo} alt="" />
         <p className="w-[650px] text-[20px] font-[700] text-[#ffffff] leading-[25px]">
           Единый открытый дискуссионный портал Государственных образовательных

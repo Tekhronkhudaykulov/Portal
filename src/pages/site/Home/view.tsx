@@ -3,6 +3,7 @@ import {
   CategoryIcon2,
   CategoryIcon3,
   CategoryIcon4,
+  CloseIcon,
 } from "../../../assets/icon";
 import AddDocButton from "../../../components/button/addDocButton";
 
@@ -19,63 +20,96 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { ASSETS } from "../../../assets/img";
 import SliderCard from "../../../components/sliderCard/view";
+import { modalsStore } from "../../../store";
+import "./components/home.scss";
 
 const Home = () => {
+  const { modals, closeModal } = modalsStore();
+
   return (
     <div className="bg-[#f9f9f9]">
-      <div className="bg-[#397FD5]">
+      <div className="bg-[#397FD5] ">
         <Navbar />
       </div>
-      <div className="container mx-auto">
+      <div className={`menu ${modals?.CRUID && "active"}`}>
+        <div
+          onClick={() => closeModal("CRUID")}
+          className="float-right cursor-pointer"
+        >
+          <CloseIcon />
+        </div>
+        <div className="flex flex-col mt-[100px] gap-y-[30px] ">
+          <a href="" className="text-white text-[20px] font-[700]">
+            Авторизация
+          </a>
+          <a href="" className="text-white text-[20px] font-[700]">
+            Статистика
+          </a>
+          <a href="" className="text-white text-[20px] font-[700]">
+            Часто задаваемые вопросы
+          </a>
+          <a href="" className="text-white text-[20px] font-[700]">
+            Обратная связь
+          </a>
+        </div>
+      </div>
+      <div className="container mx-auto max-xl:pl-[10px] max-xl:pr-[10px]">
         <Header />
         <div className="flex items-center justify-center my-[40px]">
           <SearchInput />
         </div>
         <section>
           <div className="flex justify-between items-center">
-            <p className="titleHome text-[30px] font-[700]">Категории</p>
+            <p className="titleHome text-[30px] font-[700] max-xl:text-[25px]">
+              Категории
+            </p>
+            <div className="max-xl:hidden">
+              <AddDocButton title="Посмотреть все" />
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-[20px] my-[30px] max-xl:grid max-xl:grid-cols-2">
+            <CategoryCard
+              title="Банковская деятельность"
+              icon={<CategoryIcon1 />}
+            />
+            <CategoryCard
+              title="Внешнеэкономическая деятельность. Таможенное дело"
+              icon={<CategoryIcon2 />}
+            />
+            <CategoryCard
+              title="Безопасность и охрана"
+              icon={<CategoryIcon3 />}
+            />
+            <CategoryCard
+              title="Гражданское законодательство"
+              icon={<CategoryIcon4 />}
+            />
+            <CategoryCard
+              title="Банковская деятельность"
+              icon={<CategoryIcon1 />}
+            />
+            <CategoryCard
+              title="Внешнеэкономическая деятельность. Таможенное дело"
+              icon={<CategoryIcon2 />}
+            />
+            <CategoryCard
+              title="Безопасность и охрана"
+              icon={<CategoryIcon3 />}
+            />
+            <CategoryCard
+              title="Гражданское законодательство"
+              icon={<CategoryIcon4 />}
+            />
+          </div>
+          <div className="max-xl:flex max-xl:justify-center">
             <AddDocButton title="Посмотреть все" />
           </div>
-          <div className="grid grid-cols-4 gap-[20px] my-[30px]">
-            <CategoryCard
-              title="Банковская деятельность"
-              icon={<CategoryIcon1 />}
-            />
-            <CategoryCard
-              title="Внешнеэкономическая деятельность. Таможенное дело"
-              icon={<CategoryIcon2 />}
-            />
-            <CategoryCard
-              title="Безопасность и охрана"
-              icon={<CategoryIcon3 />}
-            />
-            <CategoryCard
-              title="Гражданское законодательство"
-              icon={<CategoryIcon4 />}
-            />
-            <CategoryCard
-              title="Банковская деятельность"
-              icon={<CategoryIcon1 />}
-            />
-            <CategoryCard
-              title="Внешнеэкономическая деятельность. Таможенное дело"
-              icon={<CategoryIcon2 />}
-            />
-            <CategoryCard
-              title="Безопасность и охрана"
-              icon={<CategoryIcon3 />}
-            />
-            <CategoryCard
-              title="Гражданское законодательство"
-              icon={<CategoryIcon4 />}
-            />
-          </div>
         </section>
         <section>
-          <p className="titleHome text-[30px] font-[700]">
+          <p className="titleHome text-[30px] font-[700] max-xl:text-[25px] max-xl:mt-[25px]">
             Последние добавленные проекты
           </p>
-          <div className="grid grid-cols-2 gap-[20px] my-[30px]">
+          <div className="grid grid-cols-2 gap-[20px] my-[30px] max-xl:grid max-xl:grid-cols-1">
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
@@ -83,10 +117,10 @@ const Home = () => {
           </div>
         </section>
         <section>
-          <p className="titleHome text-[30px] font-[700] mb-[30px]">
+          <p className="titleHome text-[30px] font-[700] mb-[30px] max-xl:text-[25px]">
             Последние предложения
           </p>
-          <div className="grid grid-cols-2 gap-[20px] my-[30px]">
+          <div className="grid grid-cols-2 gap-[20px] my-[30px] max-xl:grid max-xl:grid-cols-1">
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
@@ -152,7 +186,15 @@ const Home = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="mySwiper"
+            breakpoints={{
+              768: {
+                slidesPerView: 4,
+              },
+              0: {
+                slidesPerView: 2.5,
+              },
+            }}
+            className="mySwiper "
           >
             <SwiperSlide>
               <SliderCard

@@ -5,10 +5,10 @@ const SearchInput = () => {
     <div className="flex relative w-[550px] ">
       <input
         type="text"
-        className="w-full py-[11px] rounded-[12px] px-[17px]"
+        className="w-full py-[11px] rounded-[12px] px-[17px] max-xl:text-[15px]"
         placeholder="Введите ключевое слово из названия проекта"
       />
-      <CiSearch className="absolute right-[10px] bottom-[8px]" fontSize={30} />
+      <CiSearch className="absolute right-[10px] bottom-[8px] " fontSize={30} />
     </div>
   );
 };
