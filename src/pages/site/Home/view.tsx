@@ -22,6 +22,7 @@ import { ASSETS } from "../../../assets/img";
 import SliderCard from "../../../components/sliderCard/view";
 import { modalsStore } from "../../../store";
 import "./components/home.scss";
+import { Autoplay } from "swiper/modules";
 
 const Home = () => {
   const { modals, closeModal } = modalsStore();
@@ -67,7 +68,7 @@ const Home = () => {
               <AddDocButton title="Посмотреть все" />
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-[20px] my-[30px] max-xl:grid max-xl:grid-cols-2">
+          <div className="grid grid-cols-4 gap-[20px] my-[30px] max-xl:grid max-xl:grid-cols-2 max-xl:gap-[10px]">
             <CategoryCard
               title="Банковская деятельность"
               icon={<CategoryIcon1 />}
@@ -101,7 +102,7 @@ const Home = () => {
               icon={<CategoryIcon4 />}
             />
           </div>
-          <div className="max-xl:flex max-xl:justify-center">
+          <div className="max-xl:flex max-xl:justify-center hidden">
             <AddDocButton title="Посмотреть все" />
           </div>
         </section>
@@ -185,7 +186,12 @@ const Home = () => {
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            loop={true}
+            modules={[Autoplay, Pagination]}
+            autoplay={{
+              delay: 500,
+              disableOnInteraction: false,
+            }}
             breakpoints={{
               768: {
                 slidesPerView: 4,
