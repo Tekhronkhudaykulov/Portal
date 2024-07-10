@@ -1,9 +1,6 @@
-import { useTranslation } from "react-i18next";
 import { ASSETS } from "../../assets/img";
 
 const Footer = () => {
-  const { t } = useTranslation();
-
   return (
     <div className="container mx-auto pt-[48px]">
       <div className="flex items-center justify-center gap-x-[25px]">

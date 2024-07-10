@@ -1,9 +1,7 @@
-import { useTranslation } from "react-i18next";
 import { BurgerMenu, Profile } from "../../assets/icon";
 import { ASSETS } from "../../assets/img";
 
 const Navbar = () => {
-  const { t } = useTranslation();
   return (
     <div className="container mx-auto pt-[30px] pb-[20px] flex items-center justify-between">
       <div>
