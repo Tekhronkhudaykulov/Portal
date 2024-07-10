@@ -1,1 +1,0 @@
-import{aj as a}from"./index-BhBYY_06.js";import{e as r,T as s}from"./view-B2UlDOTI.js";const o=()=>a.jsxs("div",{children:[a.jsx(r,{title:"Популярные проекты"}),a.jsx("div",{className:"mt-[18px]",children:a.jsx(s,{})})]});export{o as default};

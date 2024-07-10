@@ -1,0 +1,1 @@
+import{a4 as a}from"./index-BXN1mewy.js";import{o as r,q as s}from"./view-DSu-nL07.js";const e=()=>a.jsxs("div",{children:[a.jsx(r,{title:"Популярные проекты"}),a.jsx("div",{className:"mt-[18px]",children:a.jsx(s,{})})]});export{e as default};
